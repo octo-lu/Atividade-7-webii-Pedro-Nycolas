@@ -1,0 +1,148 @@
+/* src/App.css */
+:root {
+  --bg-color: #0d0d0d;
+  --text-color: #e0e0e0;
+  --input-bg: #1a1a1a;
+  --input-border: #333333;
+  --input-focus: #007bff;
+  --button-bg: #007bff;
+  --button-hover: #0056b3;
+  --error-color: #ff4d4d;
+  --circle-color: rgba(0, 123, 255, 0.1);
+  --circle-glow: rgba(0, 123, 255, 0.3);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url('./assets/1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-color);
+  font-family: 'Orbitron', sans-serif;
+  /* overflow: hidden; */ /* Remova ou comente esta linha */
+}
+
+.success {
+  color: green;
+  font-size: 0.8em;
+}
+
+
+.container {
+  position: relative;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.8), rgba(10, 10, 10, 0.9));
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+  z-index: 1;
+}
+
+.step {
+  margin-bottom: 2rem;
+}
+
+.step label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.step input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  color: var(--text-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step input:focus {
+  outline: none;
+  border-color: var(--input-focus);
+  box-shadow: 0 0 10px var(--circle-glow);
+}
+
+.error {
+  color: var(--error-color);
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+}
+
+.navigation {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.05);
+}
+
+/* Círculos de invocação */
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.circles div {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: var(--circle-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--circle-glow);
+  animation: float 10s infinite ease-in-out;
+}
+
+.circles div:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-duration: 8s;
+}
+
+.circles div:nth-child(2) {
+  top: 50%;
+  left: 70%;
+  animation-duration: 12s;
+}
+
+.circles div:nth-child(3) {
+  top: 80%;
+  left: 30%;
+  animation-duration: 10s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.5);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
